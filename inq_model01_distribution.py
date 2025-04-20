@@ -258,12 +258,12 @@ def save_feedback_to_db(feedback):
         db.close()
         st.success("피드백이 성공적으로 저장되었습니다.")
         return True  # 저장 성공
-#    except pymysql.MySQLError as db_err:
-#        st.error(f"DB 처리 중 오류가 발생했습니다: {db_err}")
-#        return False  # 저장 실패
-#    except Exception as e:
-#        st.error(f"알 수 없는 오류가 발생했습니다: {e}")
-#        return False  # 저장 실패
+    except pymysql.MySQLError as db_err:
+        st.error(f"DB 처리 중 오류가 발생했습니다: {db_err}")
+        return False  # 저장 실패
+    except Exception as e:
+        st.error(f"알 수 없는 오류가 발생했습니다: {e}")
+        return False  # 저장 실패
 
 # 페이지 4: 실험 과정 출력
 def page_4():
@@ -302,8 +302,8 @@ def page_4():
         # 새로운 데이터(all_data_to_store)를 MySQL에 저장
         if save_to_db(all_data_to_store):  # 기존 save_to_db 함수에 통합된 데이터 전달
             st.session_state["feedback_saved"] = True  # 저장 성공 시 플래그 설정
-    #    else:
-    #        st.error("저장에 실패했습니다. 다시 시도해주세요.")
+        else:
+            st.error("저장에 실패했습니다. 다시 시도해주세요.")
 
     # 이전 버튼 (페이지 3으로 이동 시 피드백 삭제)
     if st.button("이전", key="page4_back_button"):
