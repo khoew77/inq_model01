@@ -258,9 +258,9 @@ def save_feedback_to_db(feedback):
         db.close()
         st.success("피드백이 성공적으로 저장되었습니다.")
         return True  # 저장 성공
-    except pymysql.MySQLError as db_err:
-        st.error(f"DB 처리 중 오류가 발생했습니다: {db_err}")
-        return False  # 저장 실패
+#    except pymysql.MySQLError as db_err:
+#        st.error(f"DB 처리 중 오류가 발생했습니다: {db_err}")
+#        return False  # 저장 실패
     except Exception as e:
         st.error(f"알 수 없는 오류가 발생했습니다: {e}")
         return False  # 저장 실패
