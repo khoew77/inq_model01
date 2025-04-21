@@ -125,12 +125,7 @@ def page_2():
     st.write(
        """  
        Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
-
-       # Introduction to the app
-st.write("""
-Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
 """)
-
 # Step-by-step guide
 st.subheader("How to Use MathMentor")
 
