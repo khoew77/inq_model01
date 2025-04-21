@@ -125,10 +125,6 @@ def page_2():
     st.write(
        """  
        Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
-""")
-# Step-by-step guide
-st.subheader("How to Use MathMentor")
-
        
        ※주의! '자동 번역'을 활성화하면 대화가 이상하게 번역되므로 활성화하면 안 돼요. 혹시 이미 '자동 번역' 버튼을 눌렀다면 비활성화 하세요.  
 
@@ -144,7 +140,12 @@ st.subheader("How to Use MathMentor")
 
         위 내용을 충분히 숙지했다면, 아래의 [다음] 버튼을 눌러 진행해주세요.  
         """)
+    
+# Step-by-step guide
+    st.subheader("How to Use MathMentor")
 
+
+    
     # 버튼
     col1, col2 = st.columns([1, 1])
 
