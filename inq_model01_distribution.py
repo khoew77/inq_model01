@@ -49,7 +49,7 @@ def save_to_db(all_data):
     name = st.session_state.get('user_name', '').strip()
 
     if not number or not name:  # 학번과 이름 확인
-        st.error("사용자 학번과 이름을 입력해야 합니다.")
+        st.error("Please enter your student ID and name.")
         return False  # 저장 실패
 
     try:
@@ -79,10 +79,10 @@ def save_to_db(all_data):
         db.close()
         return True  # 저장 성공
     except pymysql.MySQLError as db_err:
-        st.error(f"DB 처리 중 오류가 발생했습니다: {db_err}")
+        st.error(f"A database error occurred: {db_err}")
         return False  # 저장 실패
     except Exception as e:
-        st.error(f"알 수 없는 오류가 발생했습니다: {e}")
+        st.error(f"An unexpected error has occurred: {e}")
         return False  # 저장 실패
 
 # GPT 응답 생성 함수
@@ -100,21 +100,21 @@ def get_chatgpt_response(prompt):
 
 # 페이지 1: 학번 및 이름 입력
 def page_1():
-    st.title("보라중학교 탐구 도우미 챗봇 P1")
-    st.write("학번과 이름을 입력한 뒤 '다음' 버튼을 눌러주세요.")
+    st.title("MathMentor")
+    st.write("Please enter your student ID and name, then click the 'Next' button.")
 
     if "user_number" not in st.session_state:
         st.session_state["user_number"] = ""
     if "user_name" not in st.session_state:
         st.session_state["user_name"] = ""
 
-    st.session_state["user_number"] = st.text_input("학번", value=st.session_state["user_number"])
-    st.session_state["user_name"] = st.text_input("이름", value=st.session_state["user_name"])
+    st.session_state["user_number"] = st.text_input("Student ID", value=st.session_state["user_number"])
+    st.session_state["user_name"] = st.text_input("Name", value=st.session_state["user_name"])
 
     st.write(" ")  # Add space to position the button at the bottom properly
-    if st.button("다음", key="page1_next_button"):
+    if st.button("Next", key="page1_next_button"):
         if st.session_state["user_number"].strip() == "" or st.session_state["user_name"].strip() == "":
-            st.error("학번과 이름을 모두 입력해주세요.")
+            st.error("Oops! Please make sure to enter both your student ID and name.")
         else:
             st.session_state["step"] = 2
             st.rerun()
