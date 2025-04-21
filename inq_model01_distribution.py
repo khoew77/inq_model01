@@ -122,6 +122,10 @@ def page_1():
 # 페이지 2: 사용법 안내
 def page_2():
     st.title("MathMentor: Your Personal AI Calculus Tutor")
+
+    # Step-by-step guide
+    st.subheader("How to Use MathMentor")
+
     st.write(
        """  
        Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
@@ -141,11 +145,6 @@ def page_2():
         위 내용을 충분히 숙지했다면, 아래의 [다음] 버튼을 눌러 진행해주세요.  
         """)
     
-# Step-by-step guide
-    st.subheader("How to Use MathMentor")
-
-    
-
     # 버튼
     col1, col2 = st.columns([1, 1])
 
