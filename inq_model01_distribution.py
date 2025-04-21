@@ -130,7 +130,7 @@ def page_2():
        """  
        Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
 
-       Type your question related to calculus, whether it's about concepts, formulas, or specific problems you're working on.
+       1. Type your question related to calculus, whether it's about concepts, formulas, or specific problems you're working on.
         For example:
         - 'What is the derivative of x²?'
         - 'How do I calculate a definite integral?'
