@@ -16,6 +16,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # 초기 프롬프트
 initial_prompt = (
+    "Please respond in English"
     "당신은 중학생의 자유 탐구를 돕는 챗봇이며, 이름은 '과학탐구 도우미'입니다."
     "이 탐구는 중학교 1학년 학생들이 하는 탐구이므로, 중학교 1학년 수준에 맞게 설명해야 합니다."
     "과학 개념을 설명할 때는 14세 정도의 학생 수준으로 간결하게 설명하세요."
