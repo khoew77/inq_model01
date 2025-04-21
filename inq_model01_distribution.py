@@ -155,31 +155,6 @@ For example:
 MathMentor will provide clear, step-by-step explanations tailored to your current understanding level.
 """)
 
-st.write("""
-### 2. **Work Through Problems**
-Submit a problem you are working on, and MathMentor will guide you through the solution process. For example:
-- If you're stuck on finding the integral of a function, simply type it out, and MathMentor will walk you through the necessary steps, explain the reasoning behind each step, and even provide hints if needed.
-""")
-
-st.write("""
-### 3. **Clarify Doubts**
-If you don’t understand a step in the explanation, ask MathMentor to clarify. You can ask things like:
-- 'What do you mean by this step?'
-- 'Can you explain why this formula is used here?'
-
-MathMentor will provide additional explanations and examples to help you grasp the concept more easily.
-""")
-
-st.write("""
-### 4. **Explore Advanced Topics**
-Once you're comfortable with the basics, you can ask MathMentor to explain more complex topics like:
-- Multivariable calculus
-- Taylor series
-- Advanced techniques in integration
-
-MathMentor can introduce these topics gradually, helping you understand advanced concepts in manageable steps.
-""")
-   
     # 버튼
     col1, col2 = st.columns([1, 1])
 
