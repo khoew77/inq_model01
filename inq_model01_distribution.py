@@ -129,6 +129,14 @@ def page_2():
     st.write(
        """  
        Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
+
+       Type your question related to calculus, whether it's about concepts, formulas, or specific problems you're working on.
+        For example:
+        - 'What is the derivative of x²?'
+        - 'How do I calculate a definite integral?'
+        - 'Can you explain the chain rule?'
+
+        MathMentor will provide clear, step-by-step explanations tailored to your current understanding level.
        
        ※주의! '자동 번역'을 활성화하면 대화가 이상하게 번역되므로 활성화하면 안 돼요. 혹시 이미 '자동 번역' 버튼을 눌렀다면 비활성화 하세요.  
 
