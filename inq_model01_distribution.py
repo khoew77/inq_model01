@@ -224,12 +224,12 @@ MathMentor is here to help you, anytime! Happy learning!
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        if st.button("이전"):
+        if st.button("Previous"):
             st.session_state["step"] = 1
             st.rerun()
 
     with col2:
-        if st.button("다음", key="page2_next_button"):
+        if st.button("Next", key="page2_next_button"):
             st.session_state["step"] = 3
             st.rerun()
 
