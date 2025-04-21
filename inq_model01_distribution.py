@@ -179,47 +179,7 @@ Once you're comfortable with the basics, you can ask MathMentor to explain more 
 
 MathMentor can introduce these topics gradually, helping you understand advanced concepts in manageable steps.
 """)
-
-st.write("""
-### 5. **Practice and Improve**
-You can ask MathMentor for practice problems and quizzes on specific topics. For example:
-- 'Give me practice problems on the chain rule.'
-- 'Can you quiz me on integration by parts?'
-
-MathMentor will generate practice problems and explain the solutions once you're done.
-""")
-
-st.write("""
-### 6. **Get Feedback**
-If you solve a problem on your own and would like feedback, you can share your solution with MathMentor:
-- 'I think the answer to this limit problem is 3. Is that correct?'
-
-MathMentor will review your solution, point out any errors, and offer suggestions on how to correct them.
-""")
-
-st.write("""
-### 7. **Track Your Progress**
-MathMentor allows you to keep track of the concepts you've covered and the progress you've made. Feel free to return to any topic at any time to refresh your knowledge.
-""")
-
-st.write("""
-### 8. **Ask for Help Anytime**
-MathMentor is available 24/7. No matter what time of day or night, you can always rely on it to guide you through any calculus challenge.
-""")
-
-# User input form to start asking questions
-st.subheader("Start Asking Questions:")
-question = st.text_input("Ask MathMentor a question:")
-
-# Example of what the bot will return (in reality, you could replace this with a function that generates answers based on AI or pre-defined knowledge)
-if question:
-    st.write(f"MathMentor's answer: (This is where MathMentor will provide a response based on your question)")
-
-# Footer information
-st.write("""
-MathMentor is here to help you, anytime! Happy learning!
-""")    
-    
+   
     # 버튼
     col1, col2 = st.columns([1, 1])
 
