@@ -126,25 +126,99 @@ def page_2():
        """  
        Welcome to **MathMentor**, your AI assistant for mastering calculus! Here's how you can use this chatbot to enhance your learning experience.
        
-       ※주의! '자동 번역'을 활성화하면 대화가 이상하게 번역되므로 활성화하면 안 돼요. 혹시 이미 '자동 번역' 버튼을 눌렀다면 비활성화 하세요.  
+    #   ※주의! '자동 번역'을 활성화하면 대화가 이상하게 번역되므로 활성화하면 안 돼요. 혹시 이미 '자동 번역' 버튼을 눌렀다면 비활성화 하세요.  
 
-        ① 먼저 인공지능에게 당신이 작성한 실험 가설과 과정을 알려주세요. 
+    #    ① 먼저 인공지능에게 당신이 작성한 실험 가설과 과정을 알려주세요. 
 
-        ② 인공지능은 당신의 실험 가설과 과정에 대해 잘한 점과 개선할 점을 알려줄 거예요. 인공지능의 피드백에 대해 궁금한 점을 질문하세요.
+    #    ② 인공지능은 당신의 실험 가설과 과정에 대해 잘한 점과 개선할 점을 알려줄 거예요. 인공지능의 피드백에 대해 궁금한 점을 질문하세요.
 
-        ③ 궁금한 것을 다 물어봤다면, 인공지능에게 '궁금한 건 다 물어봤어'라고 말해주세요.
+    #    ③ 궁금한 것을 다 물어봤다면, 인공지능에게 '궁금한 건 다 물어봤어'라고 말해주세요.
 
-        ④ 그러면 인공지능이 당신의 생각을 물어볼 거예요. 그것을 고민해 답해보세요. 궁금한 게 있으면 인공지능에게 물어봐도 돼요.
+    #    ④ 그러면 인공지능이 당신의 생각을 물어볼 거예요. 그것을 고민해 답해보세요. 궁금한 게 있으면 인공지능에게 물어봐도 돼요.
 
-       ⑤ 충분히 대화가 이루어지면 인공지능이 [다음] 버튼을 눌러도 된다고 알려줘요. 인공지능이 [다음] 버튼을 누르라고 했을 때 버튼을 누르세요!
+    #   ⑤ 충분히 대화가 이루어지면 인공지능이 [다음] 버튼을 눌러도 된다고 알려줘요. 인공지능이 [다음] 버튼을 누르라고 했을 때 버튼을 누르세요!
 
-        위 내용을 충분히 숙지했다면, 아래의 [다음] 버튼을 눌러 진행해주세요.  
+    #    위 내용을 충분히 숙지했다면, 아래의 [다음] 버튼을 눌러 진행해주세요.  
         """)
     
 # Step-by-step guide
     st.subheader("How to Use MathMentor")
 
+st.write("""
+### 1. **Start by Asking a Question**
+Type your question related to calculus, whether it's about concepts, formulas, or specific problems you're working on.
+For example:
+- 'What is the derivative of x²?'
+- 'How do I calculate a definite integral?'
+- 'Can you explain the chain rule?'
 
+MathMentor will provide clear, step-by-step explanations tailored to your current understanding level.
+""")
+
+st.write("""
+### 2. **Work Through Problems**
+Submit a problem you are working on, and MathMentor will guide you through the solution process. For example:
+- If you're stuck on finding the integral of a function, simply type it out, and MathMentor will walk you through the necessary steps, explain the reasoning behind each step, and even provide hints if needed.
+""")
+
+st.write("""
+### 3. **Clarify Doubts**
+If you don’t understand a step in the explanation, ask MathMentor to clarify. You can ask things like:
+- 'What do you mean by this step?'
+- 'Can you explain why this formula is used here?'
+
+MathMentor will provide additional explanations and examples to help you grasp the concept more easily.
+""")
+
+st.write("""
+### 4. **Explore Advanced Topics**
+Once you're comfortable with the basics, you can ask MathMentor to explain more complex topics like:
+- Multivariable calculus
+- Taylor series
+- Advanced techniques in integration
+
+MathMentor can introduce these topics gradually, helping you understand advanced concepts in manageable steps.
+""")
+
+st.write("""
+### 5. **Practice and Improve**
+You can ask MathMentor for practice problems and quizzes on specific topics. For example:
+- 'Give me practice problems on the chain rule.'
+- 'Can you quiz me on integration by parts?'
+
+MathMentor will generate practice problems and explain the solutions once you're done.
+""")
+
+st.write("""
+### 6. **Get Feedback**
+If you solve a problem on your own and would like feedback, you can share your solution with MathMentor:
+- 'I think the answer to this limit problem is 3. Is that correct?'
+
+MathMentor will review your solution, point out any errors, and offer suggestions on how to correct them.
+""")
+
+st.write("""
+### 7. **Track Your Progress**
+MathMentor allows you to keep track of the concepts you've covered and the progress you've made. Feel free to return to any topic at any time to refresh your knowledge.
+""")
+
+st.write("""
+### 8. **Ask for Help Anytime**
+MathMentor is available 24/7. No matter what time of day or night, you can always rely on it to guide you through any calculus challenge.
+""")
+
+# User input form to start asking questions
+st.subheader("Start Asking Questions:")
+question = st.text_input("Ask MathMentor a question:")
+
+# Example of what the bot will return (in reality, you could replace this with a function that generates answers based on AI or pre-defined knowledge)
+if question:
+    st.write(f"MathMentor's answer: (This is where MathMentor will provide a response based on your question)")
+
+# Footer information
+st.write("""
+MathMentor is here to help you, anytime! Happy learning!
+""")    
     
     # 버튼
     col1, col2 = st.columns([1, 1])
