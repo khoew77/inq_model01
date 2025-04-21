@@ -144,16 +144,6 @@ def page_2():
 # Step-by-step guide
     st.subheader("How to Use MathMentor")
 
-st.write("""
-1. **Start by Asking a Question**
-Type your question related to calculus, whether it's about concepts, formulas, or specific problems you're working on.
-For example:
-- 'What is the derivative of x²?'
-- 'How do I calculate a definite integral?'
-- 'Can you explain the chain rule?'
-
-MathMentor will provide clear, step-by-step explanations tailored to your current understanding level.
-""")
     
 
     # 버튼
