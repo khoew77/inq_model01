@@ -175,7 +175,7 @@ def page_3():
         on_change=lambda: st.session_state.update({"user_input_temp": st.session_state["user_input"]}),
     )
 
-    if st.button("전송") and user_input.strip():
+    if st.button("Send") and user_input.strip():
         # GPT 응답 가져오기
         assistant_response = get_chatgpt_response(user_input)
 
@@ -187,23 +187,23 @@ def page_3():
         st.rerun()
 
     # 최근 대화 출력
-    st.subheader("📌 최근 대화")
+    st.subheader("📌 Most Recent Exchange")
     if st.session_state["recent_message"]["user"] or st.session_state["recent_message"]["assistant"]:
         st.write(f"**You:** {st.session_state['recent_message']['user']}")
-        st.write(f"**과학탐구 도우미:** {st.session_state['recent_message']['assistant']}")
+        st.write(f"**MathMentor:** {st.session_state['recent_message']['assistant']}")
     else:
-        st.write("아직 최근 대화가 없습니다.")
+        st.write("No recent messages yet.")
 
     # 누적 대화 출력
-    st.subheader("📜 누적 대화 목록")
+    st.subheader("📜 Full Chat History")
     if st.session_state["messages"]:
         for message in st.session_state["messages"]:
             if message["role"] == "user":
                 st.write(f"**You:** {message['content']}")
             elif message["role"] == "assistant":
-                st.write(f"**과학탐구 도우미:** {message['content']}")
+                st.write(f"**MathMentor:** {message['content']}")
     else:
-        st.write("아직 대화 기록이 없습니다.")
+        st.write("Start your first message above!")
 
     col1, col2 = st.columns([1, 1])
 
