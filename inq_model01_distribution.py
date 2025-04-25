@@ -129,9 +129,9 @@ def page_2():
         - “What is the chain rule and when do I use it?”
         - “Can you explain the concept of a critical point?”
 
-        Please make sure you're ready before moving on.
+        Please make sure you're ready before moving on. When you're ready, click **Next**.
         
-             """)
+        """)
     
     # 버튼
     col1, col2 = st.columns([1, 1])
