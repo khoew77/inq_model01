@@ -209,13 +209,13 @@ def page_3():
 
     # 이전 버튼
     with col1:
-        if st.button("이전"):
+        if st.button("Previous"):
             st.session_state["step"] = 2
             st.rerun()
 
     # 다음 버튼
     with col2:
-        if st.button("다음", key="page3_next_button"):
+        if st.button("Next", key="page3_next_button"):
             st.session_state["step"] = 4
             st.session_state["feedback_saved"] = False  # 피드백 재생성 플래그 초기화
             st.rerun()
@@ -226,7 +226,7 @@ def save_feedback_to_db(feedback):
     name = st.session_state.get('user_name', '').strip()
 
     if not number or not name:  # 학번과 이름 확인
-        st.error("사용자 학번과 이름을 입력해야 합니다.")
+        st.error("Enter your student ID and name.")
         return False  # 저장 실패
 
     try:
@@ -251,13 +251,13 @@ def save_feedback_to_db(feedback):
         cursor.execute(sql, val)
         cursor.close()
         db.close()
-        st.success("피드백이 성공적으로 저장되었습니다.")
+        st.success("Feedback saved.")
         return True  # 저장 성공
     except pymysql.MySQLError as db_err:
         st.error(f"DB 처리 중 오류가 발생했습니다: {db_err}")
         return False  # 저장 실패
     except Exception as e:
-        st.error(f"알 수 없는 오류가 발생했습니다: {e}")
+        st.error(f"Unexpected error: {e}")
         return False  # 저장 실패
 
 # 페이지 4: 실험 과정 출력
