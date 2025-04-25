@@ -36,8 +36,7 @@ initial_prompt = (
     "Provide specific feedback on strengths and suggestions for improvement based on standard mathematical practices (e.g., clarity of reasoning, appropriate use of definitions, logical structure, completeness). "
     "Avoid giving full solutions unless the student explicitly asks. "
     "Always prioritize guiding students to reflect and revise. "
-    "End your first message with: 'Let’s get started! What math topic or question are you working on today?'"
-
+    
 )
 
 # MySQL 저장 함수
