@@ -263,9 +263,7 @@ def save_feedback_to_db(feedback):
 # 페이지 4: 실험 과정 출력
 def page_4():
     st.title("Wrap-Up: Final Reflection")
-    st.write("🎉 Great work! You're almost done. Use the space below to summarize what you learned today or leave any final thoughts.
-        You can also click the **Save Chat History** button to store your conversation.")
-
+    
     # 페이지 4로 돌아올 때마다 새로운 피드백 생성
     if not st.session_state.get("feedback_saved", False):
         # 대화 기록을 기반으로 탐구 계획 작성
