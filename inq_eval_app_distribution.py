@@ -31,7 +31,7 @@ def fetch_records():
         db.close()
         return records
     except pymysql.MySQLError as e:
-        st.error(f"데이터베이스 오류: {e}")
+        st.error(f"Error: A database error has occurred.: {e}")
         return []
 
 # 특정 ID의 레코드 가져오기 함수
@@ -45,14 +45,14 @@ def fetch_record_by_id(record_id):
         db.close()
         return record
     except pymysql.MySQLError as e:
-        st.error(f"데이터베이스 오류: {e}")
+        st.error(f"Error: A database error has occurred.: {e}")
         return None
 
 # Streamlit 애플리케이션
-st.title("학생의 인공지능 사용 내역(교사용)")
+st.title("Student AI Usage History (For Teachers)")
 
 # 비밀번호 입력
-password = st.text_input("비밀번호를 입력하세요", type="password")
+password = st.text_input("Please enter your password", type="password")
 
 if password == st.secrets["PASSWORD"]:  # 환경 변수에 저장된 비밀번호와 비교
     # 저장된 레코드 불러오기
@@ -61,7 +61,7 @@ if password == st.secrets["PASSWORD"]:  # 환경 변수에 저장된 비밀번�
     if records:
         # 레코드 선택
         record_options = [f"{record[1]} ({record[2]}) - {record[3]}" for record in records]
-        selected_record = st.selectbox("내역을 선택하세요:", record_options)
+        selected_record = st.selectbox("Please select a record.:", record_options)
 
         # 선택된 레코드 ID 추출
         selected_record_id = records[record_options.index(selected_record)][0]
@@ -71,17 +71,17 @@ if password == st.secrets["PASSWORD"]:  # 환경 변수에 저장된 비밀번�
         if record and record[0]:  # 대화 기록이 있는지 확인
             try:
                 chat = json.loads(record[0])  # JSON 디코딩
-                st.write("### 학생의 대화 기록")
+                st.write("### Student Chat History")
                 for message in chat:
                     if message["role"] == "user":
                         st.write(f"**You:** {message['content']}")
                     elif message["role"] == "assistant":
-                        st.write(f"**과학탐구 도우미:** {message['content']}")
+                        st.write(f"**MathMentor:** {message['content']}")
             except json.JSONDecodeError:
-                st.error("대화 기록을 불러오는 데 실패했습니다. JSON 형식이 잘못되었습니다.")
+                st.error("Failed to load chat history. The JSON format is invalid.")
         else:
-            st.warning("선택된 레코드에 대화 기록이 없습니다.")
+            st.warning("No chat history found for the selected record.")
     else:
-        st.warning("데이터베이스에 저장된 내역이 없습니다.")
+        st.warning("No records stored in the database.")
 else:
-    st.error("비밀번호가 틀렸습니다.")
+    st.error("The password is incorrect.")
