@@ -299,7 +299,7 @@ def page_4():
             st.error("Failed to save conversation. Try again!")
 
     # 이전 버튼 (페이지 3으로 이동 시 피드백 삭제)
-    if st.button("이전", key="page4_back_button"):
+    if st.button("Previous", key="page4_back_button"):
         st.session_state["step"] = 3
         if "experiment_plan" in st.session_state:
             del st.session_state["experiment_plan"]  # 피드백 삭제
