@@ -268,9 +268,8 @@ def page_4():
     if not st.session_state.get("feedback_saved", False):
         # 대화 기록을 기반으로 탐구 계획 작성
         chat_history = "\n".join(f"{msg['role']}: {msg['content']}" for msg in st.session_state["messages"])
-        prompt = f"다음은 학생과 과학탐구 도우미의 대화 기록입니다:\n{chat_history}\n\n"
-        prompt += "[다음] 버튼을 눌러도 된다는 대화가 포함되어 있는지 확인하세요. 포함되지 않았다면, '[이전] 버튼을 눌러 과학탐구 도우미와 더 대화해야 합니다'라고 출력하세요. [다음] 버튼을 누르라는 대화가 포함되었음에도 이를 인지하지 못하는 경우가 많으므로, 대화를 철저히 확인하세요. 대화 기록에 [다음] 버튼을 눌러도 된다는 대화가 포함되었다면, 대화 기록을 바탕으로, 다음 내용을 포함해 탐구 내용과 피드백을 작성하세요: 1. 대화 내용 요약(대화에서 실험의 어떤 부분을 어떻게 수정하기로 했는지를 중심으로 빠뜨리는 내용 없이 요약해 주세요. 가독성이 좋도록 줄바꿈 하세요.) 2. 학생의 탐구 능력에 관한 피드백, 3. 예상 결과(주제와 관련된 과학적 이론과 실험 오차를 고려해, 실험 과정을 그대로 수행했을 때 나올 실험 결과를 표 등으로 제시해주세요. 이때 결과 관련 설명은 제시하지 말고, 결과만 제시하세요)."
-
+        prompt = f"This is a conversation between a student and MathMentor :\n{chat_history}\n\n"
+        prompt += "Please summarize the key concepts discussed, note areas of strength, and suggest improvements or study tips."
         # OpenAI API 호출
         response = client.chat.completions.create(
             model=MODEL,
@@ -279,7 +278,7 @@ def page_4():
         st.session_state["experiment_plan"] = response.choices[0].message.content
 
     # 피드백 출력
-    st.subheader("📋 생성된 피드백")
+    st.subheader("📋 Feedback Summary")
     st.write(st.session_state["experiment_plan"])
 
     # 새로운 변수에 대화 내용과 피드백을 통합
@@ -297,7 +296,7 @@ def page_4():
         if save_to_db(all_data_to_store):  # 기존 save_to_db 함수에 통합된 데이터 전달
             st.session_state["feedback_saved"] = True  # 저장 성공 시 플래그 설정
         else:
-            st.error("저장에 실패했습니다. 다시 시도해주세요.")
+            st.error("Failed to save conversation. Try again!")
 
     # 이전 버튼 (페이지 3으로 이동 시 피드백 삭제)
     if st.button("이전", key="page4_back_button"):
