@@ -96,6 +96,9 @@ def get_chatgpt_response(prompt):
 
 # 페이지 1: 학번 및 이름 입력
 def page_1():
+    
+    # Set page title
+    st.set_page_config(page_title="MathMentor", page_icon="🧮", layout="centered")
     st.title("MathMentor")
     st.write("Please enter your student ID and name, then click the 'Next' button.")
 
