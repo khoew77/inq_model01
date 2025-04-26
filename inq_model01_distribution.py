@@ -99,7 +99,11 @@ def page_1():
     
     # Set page title
     st.set_page_config(page_title="MathMentor", page_icon="🧮", layout="centered")
-    st.title("MathMentor")
+    st.title("📚 Welcome to MathMentor")
+    # Display the image
+    st.image("20250426_1112_MathMentor App Design_simple_compose_01jssmpambehdrzr9d7ej2h9bf.png",
+         caption="Your Study Companion for Math Success 📱",
+         use_column_width=True)
     st.write("Please enter your student ID and name, then click the 'Next' button.")
 
     if "user_number" not in st.session_state:
