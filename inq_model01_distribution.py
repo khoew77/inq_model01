@@ -162,7 +162,6 @@ def page_2():
 
     with col2:
         if st.button("Next", key="page2_next_button"):
-            st.success("Let's dive into math together! 🚀")
             st.session_state["step"] = 3
             st.rerun()
 
