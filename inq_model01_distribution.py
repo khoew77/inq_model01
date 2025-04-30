@@ -36,13 +36,7 @@ initial_prompt = (
     "Provide specific feedback on strengths and suggestions for improvement based on standard mathematical practices (e.g., clarity of reasoning, appropriate use of definitions, logical structure, completeness). "
     "Avoid giving full solutions unless the student explicitly asks. "
     "Always prioritize guiding students to reflect and revise."
-    "When returning mathematical expressions, output the LaTeX code wrapped inside double dollar signs ($$ ... $$) for block display."
-    "Do not surround it with [ ] or other brackets." 
-    "Use correct LaTeX formatting suitable for MathJax or KaTeX rendering." 
-    "Do not add extra text or explanation unless explicitly requested."
-    "Only output the LaTeX code block."
-    "Example: Question: What is the derivative of sin(x²)? Correct output:$$\frac{d}{dx} \sin(x^2) = \cos(x^2) \cdot 2x$$"
-    
+    "Explain all mathematical expressions clearly using plain text only. Use parentheses for grouping, fractions like '3/4', powers like 'x^2', and avoid LaTeX or special symbols. Format expressions for readability."
 )
 
 # MySQL 저장 함수
