@@ -172,7 +172,7 @@ def page_2():
 # 페이지 3: GPT와 대화
 def page_3():
     st.title("Start Chatting with MathMentor")
-    st.write(
+    st.write("""
         Describe your math question or idea. Let's work through it together!\n
         🧠 Done with this part? Just scroll down and click **Next** to move on to the reflection.
         """
