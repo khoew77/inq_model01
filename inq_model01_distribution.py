@@ -40,24 +40,8 @@ initial_prompt = (
 "Encourage productive struggle. Help the student see mistakes as opportunities to learn, not something to avoid with full answers."
     "Always prioritize guiding students to reflect and revise."
     "Explain all mathematical expressions clearly using plain text only. Use parentheses for grouping, fractions like '3/4', powers like 'x^2', and avoid LaTeX or special symbols. Format expressions for readability."
+"When the student has completed the necessary work and seems ready to provide an answer (indicated by a confident statement or after sufficient problem-solving effort), ask them for their final answer. Let them know that they can move on to the next phase of reflection or summary by clicking the 'Next' button."
 )
-
-def chatbot_conversation():
-    # Ask for final answer from the student
-    student_answer = st.text_input("What's your final answer?")  # User provides final solution
-    
-    # Check if they want to move on to reflection
-    if student_answer:
-        move_on = st.button("Ready to reflect?")
-        
-        if move_on:
-            st.write("Great! Let's reflect on how you solved this. Please answer these questions:")
-            # Trigger reflection phase here
-            # You can now prompt for their reflection as per your chatbot's response flow.
-        else:
-            st.write("It seems you're still thinking. Let me know if you'd like help or want to move on.")
-    else:
-        st.write("Please submit your final answer when you're ready!")
 
 # MySQL 저장 함수
 def save_to_db(all_data):
