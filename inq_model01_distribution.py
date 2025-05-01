@@ -42,6 +42,23 @@ initial_prompt = (
     "Explain all mathematical expressions clearly using plain text only. Use parentheses for grouping, fractions like '3/4', powers like 'x^2', and avoid LaTeX or special symbols. Format expressions for readability."
 )
 
+def chatbot_conversation():
+    # Ask for final answer from the student
+    student_answer = st.text_input("What's your final answer?")  # User provides final solution
+    
+    # Check if they want to move on to reflection
+    if student_answer:
+        move_on = st.button("Ready to reflect?")
+        
+        if move_on:
+            st.write("Great! Let's reflect on how you solved this. Please answer these questions:")
+            # Trigger reflection phase here
+            # You can now prompt for their reflection as per your chatbot's response flow.
+        else:
+            st.write("It seems you're still thinking. Let me know if you'd like help or want to move on.")
+    else:
+        st.write("Please submit your final answer when you're ready!")
+
 # MySQL 저장 함수
 def save_to_db(all_data):
     number = st.session_state.get('user_number', '').strip()
@@ -207,23 +224,6 @@ def page_3():
         # 사용자 입력을 초기화하고 페이지를 새로고침
         st.session_state["user_input_temp"] = ""
         st.rerun()
-    
-def chatbot_conversation():
-    # Ask for final answer from the student
-    student_answer = st.text_input("What's your final answer?")  # User provides final solution
-    
-    # Check if they want to move on to reflection
-    if student_answer:
-        move_on = st.button("Ready to reflect?")
-        
-        if move_on:
-            st.write("Great! Let's reflect on how you solved this. Please answer these questions:")
-            # Trigger reflection phase here
-            # You can now prompt for their reflection as per your chatbot's response flow.
-        else:
-            st.write("It seems you're still thinking. Let me know if you'd like help or want to move on.")
-    else:
-        st.write("Please submit your final answer when you're ready!")
     
     # 최근 대화 출력
     st.subheader("📌 Most Recent Exchange")
