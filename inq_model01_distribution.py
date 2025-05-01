@@ -175,9 +175,9 @@ def page_3():
     st.write(
         """
         "Describe your math question or idea. Let's work through it together!"
-        "🧠 If you're ready to continue to the reflection/summary phase, simply click 'Next.'")
+        "🧠 If you're ready to continue to the reflection/summary phase, simply click 'Next.'"
         """
-        
+    )
     # 학번과 이름 확인
     if not st.session_state.get("user_number") or not st.session_state.get("user_name"):
         st.error("Missing Student ID or Name.")
