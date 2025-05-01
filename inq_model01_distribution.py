@@ -16,7 +16,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 # 초기 프롬프트
 initial_prompt = (
-    "You are a helpful, supportive chatbot named MathMentor designed to assist college-level math students in exploring and refining their understanding of mathematical concepts. "
+    "You are a helpful, supportive chatbot named MathBuddy designed to assist college-level math students in exploring and refining their understanding of mathematical concepts. "
     "Your job is to guide students as they work through problems on their own."
     "Act as a coach, not a solver. Break the problem into manageable parts and guide the student with leading questions."
     "When a student asks a math question, **do not immediately solve it**."
@@ -129,20 +129,20 @@ def page_1():
 
 # 페이지 2: 사용법 안내
 def page_2():
-    st.title("MathMentor: Your Personal AI Calculus Tutor")
+    st.title("MathBuddy: Your Personal AI Calculus Tutor")
 
     # Step-by-step guide
-    st.subheader("How to Use MathMentor")
+    st.subheader("How to Use MathBuddy")
 
     st.write(
        """  
-       Welcome to **MathMentor!** 
+       Welcome to **MathBuddy!** 
 
         🧠 Here's how to interact with the chatbot:
         1. Start by explaining your math question, problem, or exploration goal.
-        2. MathMentor will give you constructive feedback, suggest improvements, and ask guiding questions.
+        2. MathBuddy will give you constructive feedback, suggest improvements, and ask guiding questions.
         3. Ask as many questions as you like to understand the feedback better.
-        4. When you feel ready, you can say "I'm ready to move on" and MathMentor will continue the guidance.
+        4. When you feel ready, you can say "I'm ready to move on" and MathBuddy will continue the guidance.
 
         ✍️ Examples:
         - "Solve and explain this equation step by step: (2x + 3)(x - 1) = 0"
@@ -172,7 +172,7 @@ def page_2():
 
 # 페이지 3: GPT와 대화
 def page_3():
-    st.title("Start Chatting with MathMentor")
+    st.title("Start Chatting with MathBuddy")
     st.write("""
         ✍️ Describe your math question or idea. Let's work through it together!\n
         🧠 Done with this part? Just scroll down and click **Next** to move on to the reflection.
@@ -217,7 +217,7 @@ def page_3():
     st.subheader("📌 Most Recent Exchange")
     if st.session_state["recent_message"]["user"] or st.session_state["recent_message"]["assistant"]:
         st.write(f"**You:** {st.session_state['recent_message']['user']}")
-        st.write(f"**MathMentor:** {st.session_state['recent_message']['assistant']}")
+        st.write(f"**MathBuddy:** {st.session_state['recent_message']['assistant']}")
     else:
         st.write("No recent messages yet.")
 
@@ -228,7 +228,7 @@ def page_3():
             if message["role"] == "user":
                 st.write(f"**You:** {message['content']}")
             elif message["role"] == "assistant":
-                st.write(f"**MathMentor:** {message['content']}")
+                st.write(f"**MathBuddy:** {message['content']}")
     else:
         st.write("Start your first message above!")
 
