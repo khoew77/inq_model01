@@ -6,6 +6,8 @@ import json
 from dotenv import load_dotenv
 from datetime import datetime
 
+st.markdown("<h1 style='font-size: 48px;'>This is a big header</h1>", unsafe_allow_html=True)
+
 # 환경 변수 로드
 load_dotenv()
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
