@@ -208,7 +208,7 @@ def page_3():
         st.session_state["user_input_temp"] = ""
         st.rerun()
     
-    def chatbot_conversation():
+def chatbot_conversation():
     # Ask for final answer from the student
     student_answer = st.text_input("What's your final answer?")  # User provides final solution
     
