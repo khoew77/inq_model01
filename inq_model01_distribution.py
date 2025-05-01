@@ -173,9 +173,8 @@ def page_2():
 def page_3():
     st.title("Start Chatting with MathMentor")
     st.write(
-        """
-        -Describe your math question or idea. Let's work through it together!
-        -🧠 Done with this part? Just scroll down and click **Next** to move on to the reflection.
+        Describe your math question or idea. Let's work through it together!\n
+        🧠 Done with this part? Just scroll down and click **Next** to move on to the reflection.
         """
     )
     # 학번과 이름 확인
