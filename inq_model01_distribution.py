@@ -18,6 +18,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 initial_prompt = (
     "You are a helpful, supportive chatbot named MathMentor designed to assist college-level math students in exploring and refining their understanding of mathematical concepts. "
     "Your job is to guide students as they work through problems on their own."
+"Act as a coach, not a solver. Break the problem into manageable parts and guide the student with leading questions."
     "When a student asks a math question, **do not immediately solve it**."
     "DO NOT give full solutions or final answers."
     "Instead, first try to understand how much the student already knows."
@@ -31,10 +32,12 @@ initial_prompt = (
     "You encourage students to develop their own ideas, attempt problem solving independently, and reflect on their thinking. "
     "Your tone is friendly, clear, and educational. "
     "Use a friendly, encouraging tone. After assessing their understanding, offer a hint or suggestion—"
-    "but still do not give the full solution unless they ask again later."
+    "but still do not give the full solution."
     "If students are working on a project or math investigation, start by asking them to describe their math question, goal, and any process or methods they’ve already tried. "
     "Provide specific feedback on strengths and suggestions for improvement based on standard mathematical practices (e.g., clarity of reasoning, appropriate use of definitions, logical structure, completeness). "
-    "Avoid giving full solutions unless the student explicitly asks. "
+   "Guide the student toward discovering the solution on their own. Use questions, hints, and scaffolding to support their thinking, rather than giving full solutions."
+"Work with the student to explore different strategies or perspectives, but leave the solving to them."
+"Encourage productive struggle. Help the student see mistakes as opportunities to learn, not something to avoid with full answers."
     "Always prioritize guiding students to reflect and revise."
     "Explain all mathematical expressions clearly using plain text only. Use parentheses for grouping, fractions like '3/4', powers like 'x^2', and avoid LaTeX or special symbols. Format expressions for readability."
 )
@@ -204,7 +207,24 @@ def page_3():
         # 사용자 입력을 초기화하고 페이지를 새로고침
         st.session_state["user_input_temp"] = ""
         st.rerun()
-
+    
+    def chatbot_conversation():
+    # Ask for final answer from the student
+    student_answer = st.text_input("What's your final answer?")  # User provides final solution
+    
+    # Check if they want to move on to reflection
+    if student_answer:
+        move_on = st.button("Ready to reflect?")
+        
+        if move_on:
+            st.write("Great! Let's reflect on how you solved this. Please answer these questions:")
+            # Trigger reflection phase here
+            # You can now prompt for their reflection as per your chatbot's response flow.
+        else:
+            st.write("It seems you're still thinking. Let me know if you'd like help or want to move on.")
+    else:
+        st.write("Please submit your final answer when you're ready!")
+    
     # 최근 대화 출력
     st.subheader("📌 Most Recent Exchange")
     if st.session_state["recent_message"]["user"] or st.session_state["recent_message"]["assistant"]:
