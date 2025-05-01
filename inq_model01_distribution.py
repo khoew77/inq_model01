@@ -103,8 +103,8 @@ def get_chatgpt_response(prompt):
 def page_1():
     
     # Set page title
-    st.set_page_config(page_title="MathMentor", page_icon="🧮", layout="centered")
-    st.title("📚 Welcome to MathMentor")
+    st.set_page_config(page_title="MathBuddy", page_icon="🧮", layout="centered")
+    st.title("📚 Welcome to MathBuddy")
     # Display the image
     st.image("20250426_1112_MathMentor App Design_simple_compose_01jssmpambehdrzr9d7ej2h9bf.png",
          caption="Your Study Companion for Math Success 📱",
@@ -295,7 +295,7 @@ def page_4():
     if not st.session_state.get("feedback_saved", False):
         # 대화 기록을 기반으로 탐구 계획 작성
         chat_history = "\n".join(f"{msg['role']}: {msg['content']}" for msg in st.session_state["messages"])
-        prompt = f"This is a conversation between a student and MathMentor :\n{chat_history}\n\n"
+        prompt = f"This is a conversation between a student and MathBuddy :\n{chat_history}\n\n"
         prompt += "Please summarize the key concepts discussed, note areas of strength, and suggest improvements or study tips."
         # OpenAI API 호출
         response = client.chat.completions.create(
