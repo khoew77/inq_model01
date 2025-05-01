@@ -106,7 +106,7 @@ def page_1():
     st.set_page_config(page_title="MathBuddy", page_icon="🧮", layout="centered")
     st.title("📚 Welcome to MathBuddy")
     # Display the image
-    st.image("20250426_1112_MathMentor App Design_simple_compose_01jssmpambehdrzr9d7ej2h9bf.png",
+    st.image("A_digital_graphic_design_advertisement_showcases_M.png",
          caption="Your Study Companion for Math Success 📱",
          width=200)
     st.write("Please enter your student ID and name, then click the 'Next' button.")
