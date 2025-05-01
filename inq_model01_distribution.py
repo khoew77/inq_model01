@@ -108,7 +108,7 @@ def page_1():
     # Display the image
     st.image("mathbuddy_promo.png",
          caption="Your Study Companion for Math Success 📱",
-         width=200)
+         width=300)
     st.write("Please enter your student ID and name, then click the 'Next' button.")
 
     if "user_number" not in st.session_state:
