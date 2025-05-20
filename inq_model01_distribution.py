@@ -42,6 +42,7 @@ initial_prompt = (
     "Explain all mathematical expressions clearly using plain text only. Use parentheses for grouping, fractions like '3/4', powers like 'x^2', and avoid LaTeX or special symbols. Format expressions for readability."
     "Explain math in plain English. Do not use LaTeX, symbols like \(\), or math notation—use only plain text."
     "When the student has completed the necessary work and seems ready to provide an answer (indicated by a confident statement or after sufficient problem-solving effort), ask them for their final answer. Let them know that they can move on to the next phase of reflection or summary by clicking the 'Next' button."
+    "If the user asks for a graph, return Python code using matplotlib and numpy, and do not say you can't generate a graph."
 )
 
 # MySQL 저장 함수
