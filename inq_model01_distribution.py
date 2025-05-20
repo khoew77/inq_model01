@@ -6,9 +6,6 @@ import json
 from dotenv import load_dotenv
 from datetime import datetime
 
-exec(code_block)
-st.pyplot()
-
 # 환경 변수 로드
 load_dotenv()
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
